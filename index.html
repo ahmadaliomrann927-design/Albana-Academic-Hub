@@ -25,16 +25,34 @@
         .login-box button { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border: none; padding: 14px; border-radius: 10px; font-size: 1.2rem; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold; }
 
         .main-container { display: none; flex: 1; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; }
-        .dashboard-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 14px; }
-        .dashboard-box { padding: 18px; border-radius: 14px; text-align: center; font-size: 1.15rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; }
-        .box-1 { background: linear-gradient(135deg, #10b981, #059669); color: white; }
-        .box-2 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; }
-        .box-3 { background: linear-gradient(135deg, #ec4899, #be185d); color: white; }
-        .box-4 { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
-        .box-5 { background: linear-gradient(135deg, #eab308, #ca8a04); color: white; }
-        .box-6 { background: linear-gradient(135deg, #ef4444, #991b1b); color: white; }
-        .box-7 { background: linear-gradient(135deg, #06b6d4, #0891b2); color: white; }
-        .dashboard-box:hover { transform: scale(1.02); }
+        
+        /* تنسيق لوحة التحكم وزر الأزرار الجديدة بتصميم فاخر ومبتكر */
+        .dashboard-container { width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 16px; }
+        .dashboard-box { 
+            padding: 20px 24px; 
+            border-radius: 16px; 
+            text-align: center; 
+            font-size: 1.2rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+            transition: all 0.3s ease; 
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* ألوان وتدرجات جديدة كلياً وعصرية للأزرار */
+        .box-1 { background: linear-gradient(135deg, #0f766e, #14b8a6); color: white; }
+        .box-2 { background: linear-gradient(135deg, #4338ca, #6366f1); color: white; }
+        .box-3 { background: linear-gradient(135deg, #be185d, #f43f5e); color: white; }
+        .box-4 { background: linear-gradient(135deg, #0e7490, #22d3ee); color: white; }
+        .box-5 { background: linear-gradient(135deg, #9333ea, #c084fc); color: white; }
+        .box-6 { background: linear-gradient(135deg, #b45309, #fbbf24); color: #111827; }
+        .box-7 { background: linear-gradient(135deg, #991b1b, #f87171); color: white; }
+        .box-8 { background: linear-gradient(135deg, #374151, #6b7280); color: white; }
+
+        .dashboard-box:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 15px 30px rgba(0,0,0,0.6); filter: brightness(1.1); }
 
         .dynamic-screen { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 600px; margin: auto; padding: 20px; flex: 1; }
         .sub-box { background: #1f2937; border: 1px solid #374151; padding: 18px; margin: 10px 0; border-radius: 10px; width: 100%; text-align: center; font-size: 1.1rem; cursor: pointer; transition: background 0.3s; color: #fff; font-weight: bold; }
@@ -108,18 +126,17 @@
         </div>
     </div>
 
-    <!-- لوحة التحكم الرئيسية -->
+    <!-- لوحة التحكم الرئيسية المحدثة (بدون مذكرة المهندس وبأزرار جديدة كلياً) -->
     <div class="main-container" id="mainDashboard">
         <div class="dashboard-container">
             <div class="dashboard-box box-1" onclick="showScreen('sectionsScreen')">اختبارات AL BANA</div>
             <div class="dashboard-box box-2" onclick="startOracleMenu()">🏛️ هيكل الأوراكل (40 سؤالاً خارقاً)</div>
             <div class="dashboard-box box-3" onclick="startExamSimulatorMenu()">🎯 محاكي الامتحان (اختبر جاهزيتك)</div>
-            <div class="dashboard-box" style="background: linear-gradient(135deg, #06b6d4, #0e7490); color: white;" onclick="startQuantumSimulationMenu()">🌌 غرفة المحاكاة الكمية (التحليل الذكي للجلسات)</div>
-            <div class="dashboard-box" style="background: linear-gradient(135deg, #ec4899, #831843); color: white;" onclick="openCustomExamConfig()">💙 امتحان مخصص 💙</div>
-            <div class="dashboard-box box-5" onclick="showFavoritesScreen()">🌟 الأسئلة المفضلة والمحظوظة</div>
-            <div class="dashboard-box box-6" onclick="showWeaknessesScreen()">🎯 صيد الثغرات والأخطاء (مراجعة الأخطاء تلقائياً)</div>
-            <div class="dashboard-box box-7" onclick="showNotesScreen()">📝 مذكرة ملاحظات المهندس (تدوين أفكارك وقوانينك)</div>
-            <div class="dashboard-box box-4" onclick="alert('رقم المصمم: 0983957561 🖤🌹')">اترك لنا ملاحظاتك 🖤🌹</div>
+            <div class="dashboard-box box-4" onclick="startQuantumSimulationMenu()">🌌 غرفة المحاكاة الكمية (التحليل الذكي للجلسات)</div>
+            <div class="dashboard-box box-5" onclick="openCustomExamConfig()">💙 امتحان مخصص 💙</div>
+            <div class="dashboard-box box-6" onclick="showFavoritesScreen()">🌟 الأسئلة المفضلة والمحظوظة</div>
+            <div class="dashboard-box box-7" onclick="showWeaknessesScreen()">🎯 صيد الثغرات والأخطاء (مراجعة الأخطاء تلقائياً)</div>
+            <div class="dashboard-box box-8" onclick="alert('رقم المصمم: 0983957561 🖤🌹')">اترك لنا ملاحظاتك 🖤🌹</div>
         </div>
     </div>
 
@@ -219,8 +236,9 @@
         <div id="favoritesContainer" style="width: 100%;"></div>
     </div>
 
+    <!-- التذييل المحدث (يحمل اسمك فقط بدون اسم محمد كامل محمد) -->
     <footer>
-        صمم من قبل المهندس أحمد علي عمران / المهندس محمد كامل محمد جميع الحقوق محفوظه© 2026
+        صمم من قبل المهندس أحمد علي عمران جميع الحقوق محفوظة© 2026
     </footer>
 
     <!-- ربط ملفات بنك الأسئلة للمواد مع تحديث الإصدار القسري v=11.4 -->
@@ -245,7 +263,6 @@
 
         const BACKEND_URL = "https://syrian-social-matrix.onrender.com";
 
-        // أداة أمان لتنقية مدخلات المستخدم ومنع أي ثغرات برمجية (XSS/Sanitization)
         function sanitizeInput(str) {
             if (!str) return '';
             return str.replace(/[<>]/g, '');
@@ -282,7 +299,6 @@
                 return; 
             }
 
-            // شرط السنة الدراسية المطلوب بدقة
             if (year !== "السنة الثالثة") {
                 alert('لم يحن الوقت للبدء يا GOAT!');
                 return;
@@ -332,7 +348,6 @@
         
         let favoriteQuestions = JSON.parse(localStorage.getItem('albana_favorites')) || [];
         let weaknessQuestions = JSON.parse(localStorage.getItem('albana_weaknesses')) || [];
-        let engineerNotes = localStorage.getItem('albana_engineer_notes') || '';
 
         function addWeakness(q, a) {
             let exists = weaknessQuestions.some(item => item.q === q);
@@ -432,7 +447,6 @@
             }
         }
 
-        // 📁 دالة فتح عارض المحاضرة النصية الكاملة
         function openFullSessionReader(subjectName, sessionNum, mode) {
             currentSubject = subjectName;
             showScreen('sessionReaderScreen');
@@ -1002,21 +1016,11 @@
                         </div>
                     </div>
                     <p style="font-size: 1.1rem; margin-bottom: 10px;">${item.q}</p>
-                    <input type="text" class="exam-input" placeholder="✍️ اكتب إجابتك هنا..." oninput="autoSaveProgress()">
+                    <input type="text" class="exam-input" placeholder="✍️ اكتب إجابتك هنا...">
                     <div class="answer-box exam-answer-box" style="margin-top: 10px; border-right: 3px solid #10b981;"><strong>✅ الجواب الصحيح والحقيقي:</strong> ${item.a}</div>
                 `;
                 container.appendChild(card);
             });
-        }
-
-        // خاصية الحفظ التلقائي لحالة وإجابات الاختبار محلياً
-        function autoSaveProgress() {
-            let inputs = document.querySelectorAll('.exam-input');
-            let progressData = {};
-            inputs.forEach((inp, idx) => {
-                if (inp.value) progressData[idx] = inp.value;
-            });
-            localStorage.setItem('albana_quiz_progress', JSON.stringify(progressData));
         }
 
         function submitExam() { stopExamTimer('simulator'); }
@@ -1175,31 +1179,6 @@
                 localStorage.removeItem('albana_weaknesses');
                 showWeaknessesScreen();
             }
-        }
-
-        function showNotesScreen() {
-            showScreen('favoritesScreen');
-            const container = document.getElementById('favoritesContainer');
-            document.getElementById('favoritesTitle').innerText = '📝 مذكرة ملاحظات المهندس';
-            let savedNotes = localStorage.getItem('albana_engineer_notes') || '';
-            let htmlContent = `
-                <div class="nav-buttons-bar">
-                    <button class="back-btn" onclick="showScreen('mainDashboard')">الرجوع للرئيسية</button>
-                    <button class="home-btn" onclick="saveEngineerNotes()">💾 حفظ الملاحظات</button>
-                </div>
-                <div class="question-card" style="padding: 20px;">
-                    <p style="color: #60a5fa; font-weight: bold; margin-bottom: 10px;">✍️ دون أفكارك، قوانينك، وملاحظاتك ليلة الامتحان هنا:</p>
-                    <textarea id="engineerNotesArea" style="width: 100%; height: 300px; background: #1f2937; border: 1px solid #4b5563; border-radius: 8px; color: #fff; padding: 15px; font-size: 1.05rem; line-height: 1.6; resize: vertical; outline: none;" placeholder="اكتب ملاحظاتك هنا... سيتم حفظها محلياً على جهازك تلقائياً 🖤🌹">${savedNotes}</textarea>
-                    <button onclick="saveEngineerNotes()" class="sub-box" style="background: #10b981; margin-top: 15px;">حفظ الملاحظات بنجاح 💾</button>
-                </div>
-            `;
-            container.innerHTML = htmlContent;
-        }
-
-        function saveEngineerNotes() {
-            let notesText = document.getElementById('engineerNotesArea').value;
-            localStorage.setItem('albana_engineer_notes', notesText);
-            alert('تم حفظ ملاحظاتك بنجاح يا GOAT 🖤🌹');
         }
     </script>
 
