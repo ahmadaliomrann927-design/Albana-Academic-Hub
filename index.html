@@ -26,7 +26,6 @@
 
         .main-container { display: none; flex: 1; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; }
         
-        /* تنسيق لوحة التحكم وزر الأزرار الجديدة بتصميم فاخر ومبتكر */
         .dashboard-container { width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 16px; }
         .dashboard-box { 
             padding: 20px 24px; 
@@ -42,7 +41,6 @@
             overflow: hidden;
         }
         
-        /* ألوان وتدرجات جديدة كلياً وعصرية للأزرار */
         .box-1 { background: linear-gradient(135deg, #0f766e, #14b8a6); color: white; }
         .box-2 { background: linear-gradient(135deg, #4338ca, #6366f1); color: white; }
         .box-3 { background: linear-gradient(135deg, #be185d, #f43f5e); color: white; }
@@ -100,13 +98,13 @@
         <marquee scrollamount="5">🔥⏳ تم تحديث بنك الأسئلة مع الحل 🔥___ الأسئلة الشاملة لكل الجلسات أصبحت متاحة الآن فقط في اختبارات AL BANA 🤩🔥</marquee>
     </div>
 
-    <!-- شاشة البداية الترحيبية -->
+    <!-- شاشة البداية الترحيبية مع التعديل إلى LM10 -->
     <div id="intro-screen">
         <div class="goat-title">
-            <span>G</span>
-            <span>O</span>
-            <span>A</span>
-            <span>T</span>
+            <span>L</span>
+            <span>M</span>
+            <span>1</span>
+            <span>0</span>
         </div>
         <div class="blood-countdown" id="countdownNum">7</div>
     </div>
@@ -114,7 +112,7 @@
     <!-- شاشة إدخال الاسم الثلاثي والسنة الدراسية مباشرة -->
     <div id="login-screen">
         <div class="login-box">
-            <h2>مرحباً بك يا GOAT 🐐</h2>
+            <h2>مرحباً بك يا LM10 🐐</h2>
             <input type="text" id="fullName" placeholder="أدخل اسمك الثلاثي">
             <select id="academicYear">
                 <option value="">حدد سنتك الدراسية</option>
@@ -126,13 +124,13 @@
         </div>
     </div>
 
-    <!-- لوحة التحكم الرئيسية المحدثة (بدون مذكرة المهندس وبأزرار جديدة كلياً) -->
+    <!-- لوحة التحكم الرئيسية المحدثة بالتسميات الجديدة -->
     <div class="main-container" id="mainDashboard">
         <div class="dashboard-container">
-            <div class="dashboard-box box-1" onclick="showScreen('sectionsScreen')">اختبارات AL BANA</div>
-            <div class="dashboard-box box-2" onclick="startOracleMenu()">🏛️ هيكل الأوراكل (40 سؤالاً خارقاً)</div>
-            <div class="dashboard-box box-3" onclick="startExamSimulatorMenu()">🎯 محاكي الامتحان (اختبر جاهزيتك)</div>
-            <div class="dashboard-box box-4" onclick="startQuantumSimulationMenu()">🌌 غرفة المحاكاة الكمية (التحليل الذكي للجلسات)</div>
+            <div class="dashboard-box box-1" onclick="showScreen('sectionsScreen')">الجلسات 💙</div>
+            <div class="dashboard-box box-2" onclick="startOracleMenu()">اختبار مستوى 1</div>
+            <div class="dashboard-box box-3" onclick="startExamSimulatorMenu()">اختبار مستوى 2</div>
+            <div class="dashboard-box box-4" onclick="startQuantumSimulationMenu()">اختبار مستوى 3</div>
             <div class="dashboard-box box-5" onclick="openCustomExamConfig()">💙 امتحان مخصص 💙</div>
             <div class="dashboard-box box-6" onclick="showFavoritesScreen()">🌟 الأسئلة المفضلة والمحظوظة</div>
             <div class="dashboard-box box-7" onclick="showWeaknessesScreen()">🎯 صيد الثغرات والأخطاء (مراجعة الأخطاء تلقائياً)</div>
@@ -236,7 +234,7 @@
         <div id="favoritesContainer" style="width: 100%;"></div>
     </div>
 
-    <!-- التذييل المحدث (يحمل اسمك فقط بدون اسم محمد كامل محمد) -->
+    <!-- التذييل المحدث -->
     <footer>
         صمم من قبل المهندس أحمد علي عمران جميع الحقوق محفوظة© 2026
     </footer>
@@ -295,12 +293,12 @@
             const year = document.getElementById('academicYear').value;
             
             if(!name || !year) { 
-                alert('يرجى إدخال الاسم الثلاثي وتحديد السنة الدراسية يا GOAT!'); 
+                alert('يرجى إدخال الاسم الثلاثي وتحديد السنة الدراسية يا LM10!'); 
                 return; 
             }
 
             if (year !== "السنة الثالثة") {
-                alert('لم يحن الوقت للبدء يا GOAT!');
+                alert('لم يحن الوقت للبدء يا LM10!');
                 return;
             }
             
@@ -368,23 +366,8 @@
             appMode = 'normal';
             showScreen('subjectsScreen');
             const container = document.getElementById('subjectsList');
-            if(mode === 'practical') {
-                container.innerHTML = '<h3 style="color:#60a5fa; margin-bottom:15px; text-align:center;">اختر المادة الدراسية</h3>';
-                const allPracticalBox = document.createElement('div');
-                allPracticalBox.className = 'sub-box';
-                allPracticalBox.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
-                allPracticalBox.innerHTML = '📁 الجلسات العملية الكاملة';
-                allPracticalBox.onclick = () => showAllPracticalSubjectsList();
-                container.appendChild(allPracticalBox);
-            } else {
-                container.innerHTML = '<h3 style="color:#60a5fa; margin-bottom:15px; text-align:center;">اختر المادة الدراسية</h3>';
-                const allTheoreticalBox = document.createElement('div');
-                allTheoreticalBox.className = 'sub-box';
-                allTheoreticalBox.style.background = 'linear-gradient(135deg, #8b5cf6, #6d28d9)';
-                allTheoreticalBox.innerHTML = '📁 المحاضرات النظرية الكاملة';
-                allTheoreticalBox.onclick = () => showAllTheoreticalSubjectsList();
-                container.appendChild(allTheoreticalBox);
-            }
+            container.innerHTML = '<h3 style="color:#60a5fa; margin-bottom:15px; text-align:center;">اختر المادة الدراسية</h3>';
+            
             subjects.forEach(sub => {
                 const div = document.createElement('div');
                 div.className = 'sub-box';
@@ -392,86 +375,6 @@
                 div.onclick = () => showSessions(sub, mode);
                 container.appendChild(div);
             });
-        }
-
-        function showAllPracticalSubjectsList() {
-            showScreen('subjectsScreen');
-            const container = document.getElementById('subjectsList');
-            container.innerHTML = '<h3 style="color:#3b82f6; margin-bottom:15px; text-align:center;">اختر المادة لعرض الجلسات التسع العملية</h3>';
-            subjects.forEach(sub => {
-                const div = document.createElement('div');
-                div.className = 'sub-box';
-                div.style.background = '#1e3a8a';
-                div.innerText = sub;
-                div.onclick = () => showNineSessions(sub, 'practical');
-                container.appendChild(div);
-            });
-        }
-
-        function showAllTheoreticalSubjectsList() {
-            showScreen('subjectsScreen');
-            const container = document.getElementById('subjectsList');
-            container.innerHTML = '<h3 style="color:#8b5cf6; margin-bottom:15px; text-align:center;">اختر المادة لعرض المحاضرات التسع النظرية</h3>';
-            subjects.forEach(sub => {
-                const div = document.createElement('div');
-                div.className = 'sub-box';
-                div.style.background = '#581c87';
-                div.innerText = sub;
-                div.onclick = () => showNineSessions(sub, 'theoretical');
-                container.appendChild(div);
-            });
-        }
-
-        function showNineSessions(subjectName, mode) {
-            currentSubject = subjectName;
-            showScreen('nineSessionsScreen');
-            const container = document.getElementById('nineSessionsList');
-            if(mode === 'practical') {
-                container.innerHTML = `<h3 style="color:#60a5fa; margin-bottom:15px; text-align:center;">${subjectName} - الجلسات العملية الكاملة</h3>`;
-                for(let i = 1; i <= 9; i++) {
-                    const div = document.createElement('div');
-                    div.className = 'sub-box';
-                    div.innerText = `الجلسة العملية ${getArabicNumberNine(i)} كاملة ${subjectName} 🖤🌹`;
-                    div.onclick = () => openFullSessionReader(subjectName, i, 'practical');
-                    container.appendChild(div);
-                }
-            } else {
-                container.innerHTML = `<h3 style="color:#60a5fa; margin-bottom:15px; text-align:center;">${subjectName} - المحاضرات النظرية الكاملة</h3>`;
-                for(let i = 1; i <= 9; i++) {
-                    const div = document.createElement('div');
-                    div.className = 'sub-box';
-                    div.innerText = `المحاضرة النظرية ${getArabicNumberNine(i)} كاملة ${subjectName} 🖤🌹`;
-                    div.onclick = () => openFullSessionReader(subjectName, i, 'theoretical');
-                    container.appendChild(div);
-                }
-            }
-        }
-
-        function openFullSessionReader(subjectName, sessionNum, mode) {
-            currentSubject = subjectName;
-            showScreen('sessionReaderScreen');
-            const titleEl = document.getElementById('readerTitle');
-            const contentEl = document.getElementById('readerContentContainer');
-
-            if (subjectName === "رعاية الحيوان" && mode === 'practical') {
-                if (sessionNum === 1 && window.animalCareSession1) {
-                    titleEl.innerText = window.animalCareSession1.title;
-                    contentEl.innerHTML = window.animalCareSession1.content;
-                } else if (sessionNum === 2 && window.animalCareSession2) {
-                    titleEl.innerText = window.animalCareSession2.title;
-                    contentEl.innerHTML = window.animalCareSession2.content;
-                } else if (sessionNum === 3 && window.animalCareSession3) {
-                    titleEl.innerText = window.animalCareSession3.title;
-                    contentEl.innerHTML = window.animalCareSession3.content;
-                } else {
-                    titleEl.innerText = `${subjectName} - الجلسة العملية ${getArabicNumberNine(sessionNum)}`;
-                    contentEl.innerHTML = `<p style="text-align:center; color:#9ca3af; padding: 40px;">⏳ جارٍ إضافة محتوى هذه الجلسة الكاملة قريباً يا GOAT 🖤🌹</p>`;
-                }
-            } else {
-                titleEl.innerText = `${subjectName} - الجلسة العملية ${getArabicNumberNine(sessionNum)}`;
-                contentEl.innerHTML = `<p style="text-align:center; color:#9ca3af; padding: 40px;">⏳ جارٍ إضافة محتوى هذه الجلسة الكاملة قريباً يا GOAT 🖤🌹</p>`;
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function handleSubjectsBack() {
@@ -515,7 +418,7 @@
             if (appMode === 'oracle') {
                 showScreen('sessionsScreen');
                 const container = document.getElementById('sessionsList');
-                container.innerHTML = `<h3 style="color:#a855f7; margin-bottom:15px; text-align:center;">🏛️ هيكل الأوراكل: ${subjectName}</h3>`;
+                container.innerHTML = `<h3 style="color:#a855f7; margin-bottom:15px; text-align:center;">اختبار مستوى 1: ${subjectName}</h3>`;
                 for(let i = 1; i <= 7; i++) {
                     const div = document.createElement('div');
                     div.className = 'sub-box';
@@ -526,7 +429,7 @@
                 const finalDiv = document.createElement('div');
                 finalDiv.className = 'sub-box';
                 finalDiv.style.background = '#a855f7';
-                finalDiv.innerText = `🏛️ اختبار الأوراكل الشامل (${subjectName} - 40 سؤال عشوائي)`;
+                finalDiv.innerText = `اختبار مستوى 1 الشامل (${subjectName} - 40 سؤال عشوائي)`;
                 finalDiv.onclick = () => runOracleComprehensive(subjectName);
                 container.appendChild(finalDiv);
                 return;
@@ -535,11 +438,11 @@
             if (appMode === 'quantum') {
                 showScreen('sessionsScreen');
                 const container = document.getElementById('sessionsList');
-                container.innerHTML = `<h3 style="color:#22d3ee; margin-bottom:15px; text-align:center;">🌌 غرفة المحاكاة الكمية: ${subjectName}</h3>`;
+                container.innerHTML = `<h3 style="color:#22d3ee; margin-bottom:15px; text-align:center;">اختبار مستوى 3: ${subjectName}</h3>`;
                 const simDiv = document.createElement('div');
                 simDiv.className = 'sub-box';
                 simDiv.style.background = '#0891b2';
-                simDiv.innerText = `🌌 بدء المحاكاة الكمية الذكية (${subjectName} - 25 سؤال)`;
+                simDiv.innerText = `اختبار مستوى 3 الذكي (${subjectName} - 25 سؤال)`;
                 simDiv.onclick = () => runQuantumSimulation(subjectName);
                 container.appendChild(simDiv);
                 return;
@@ -608,11 +511,6 @@
 
         function getArabicNumber(num) {
             const arr = ["الأولى", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة"];
-            return arr[num-1];
-        }
-
-        function getArabicNumberNine(num) {
-            const arr = ["الأولى", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة"];
             return arr[num-1];
         }
 
@@ -694,7 +592,7 @@
             let selectedSubs = Array.from(checkboxes).map(cb => cb.value);
 
             if (selectedSubs.length === 0) {
-                alert('الرجاء اختيار مادة واحدة على الأقل يا GOAT!');
+                alert('الرجاء اختيار مادة واحدة على الأقل يا LM10!');
                 return;
             }
 
@@ -735,7 +633,7 @@
             appMode = 'oracle';
             showScreen('subjectsScreen');
             const container = document.getElementById('subjectsList');
-            container.innerHTML = '<h3 style="color:#a855f7; margin-bottom:15px; text-align:center;">🏛️ اختر مادة هيكل الأوراكل</h3>';
+            container.innerHTML = '<h3 style="color:#a855f7; margin-bottom:15px; text-align:center;">اختبار مستوى 1</h3>';
             subjects.forEach(sub => {
                 const div = document.createElement('div');
                 div.className = 'sub-box';
@@ -756,12 +654,12 @@
                 let rawData = allOrnamentalPlantsSessions[`session${sessionNum}`] || [];
                 sessionQuestions = rawData.map(item => ({ q: item.question, a: item.answer }));
             }
-            setupOracleQuiz(sessionQuestions, `🏛️ هيكل الأوراكل: (${subjectName} - الجلسة ${getArabicNumber(sessionNum)}) - 40 سؤال`);
+            setupOracleQuiz(sessionQuestions, `اختبار مستوى 1: (${subjectName} - الجلسة ${getArabicNumber(sessionNum)}) - 40 سؤال`);
         }
 
         function runOracleComprehensive(subjectName) {
             let allSubQuestions = getAllSubjectQuestions(subjectName);
-            setupOracleQuiz(allSubQuestions, `🏛️ اختبار الأوراكل الشامل: (${subjectName}) - 40 سؤال`);
+            setupOracleQuiz(allSubQuestions, `اختبار مستوى 1 الشامل: (${subjectName}) - 40 سؤال`);
         }
 
         function setupOracleQuiz(sourceArray, titleText) {
@@ -790,7 +688,7 @@
                 let seconds = timeLeftSec % 60;
                 timerContainer.innerHTML = `
                     <div class="timer-badge" style="background:#a855f7;">
-                        <span>🏛️ الوقت المتبقي: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}</span>
+                        <span>⏳ الوقت المتبقي: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}</span>
                         <button class="stop-timer-btn" onclick="stopExamTimer('oracle')">إنهاء الوقت ⏹️</button>
                     </div>
                 `;
@@ -815,7 +713,7 @@
                 });
                 card.innerHTML = `
                     <div class="question-header">
-                        <span>🏛️ السؤال ${index + 1} 🏛️</span>
+                        <span>السؤال ${index + 1}</span>
                         <div class="action-btns">
                             <button class="icon-btn" onclick="speakText('', this)" title="قراءة السؤال صوتياً">🔊</button>
                         </div>
@@ -853,7 +751,7 @@
             appMode = 'examSimulator';
             showScreen('subjectsScreen');
             const container = document.getElementById('subjectsList');
-            container.innerHTML = '<h3 style="color:#ef4444; margin-bottom:15px; text-align:center;">🎯 اختر مادة محاكي الامتحان</h3>';
+            container.innerHTML = '<h3 style="color:#ef4444; margin-bottom:15px; text-align:center;">اختبار مستوى 2</h3>';
             subjects.forEach(sub => {
                 const div = document.createElement('div');
                 div.className = 'sub-box';
@@ -870,7 +768,7 @@
             refreshGamificationUI();
             activeQuestions = [...allSubQuestions].sort(() => 0.5 - Math.random()).slice(0, 30);
             showScreen('quizScreen');
-            renderExamModeQuestions(activeQuestions, `🎯 محاكي الامتحان: (${subjectName}) - 30 سؤال`);
+            renderExamModeQuestions(activeQuestions, `اختبار مستوى 2: (${subjectName}) - 30 سؤال`);
             startExamTimer(45 * 60);
         }
 
@@ -878,7 +776,7 @@
             appMode = 'quantum';
             showScreen('subjectsScreen');
             const container = document.getElementById('subjectsList');
-            container.innerHTML = '<h3 style="color:#22d3ee; margin-bottom:15px; text-align:center;">🌌 اختر مادة غرفة المحاكاة الكمية</h3>';
+            container.innerHTML = '<h3 style="color:#22d3ee; margin-bottom:15px; text-align:center;">اختبار مستوى 3</h3>';
             subjects.forEach(sub => {
                 const div = document.createElement('div');
                 div.className = 'sub-box';
@@ -899,10 +797,10 @@
                 let correctAnswer = item.a;
                 let wrongOptions = allAnswersPool.filter(ans => ans !== correctAnswer && ans && ans.trim() !== "").sort(() => 0.5 - Math.random()).slice(0, 3);
                 let options = [...wrongOptions, correctAnswer].sort(() => 0.5 - Math.random());
-                return { q: "🌌 [محاكاة كمية من الجلسات]: " + item.q, correct: correctAnswer, options: options };
+                return { q: "اختبار مستوى 3: " + item.q, correct: correctAnswer, options: options };
             });
             showScreen('quizScreen');
-            renderOracleQuestions(activeQuestions, `🌌 غرفة المحاكاة الكمية: (${subjectName}) - استخلاص ذكي من الجلسات`);
+            renderOracleQuestions(activeQuestions, `اختبار مستوى 3: (${subjectName})`);
             startOracleTimer(30 * 60);
         }
 
@@ -970,7 +868,7 @@
             let percentage = totalQ > 0 ? Math.round((correctCount / totalQ) * 100) : 0;
             let reportHtml = `
                 <div class="report-card">
-                    <h3>📊 التقرير التقيمي النهائي (بدون مجاملة)</h3>
+                    <h3>📊 التقرير التقيمي النهائي</h3>
                     <div class="report-stats">
                         <div class="stat-box"><span>إجمالي الأسئلة</span><strong>${totalQ}</strong></div>
                         <div class="stat-box"><span>الإجابات الصحيحة</span><strong style="color: #10b981;">${correctCount}</strong></div>
@@ -979,9 +877,6 @@
                     <div style="font-size: 1.1rem; margin-bottom: 10px; color: #d1d5db;">
                         نسبة النجاح الدقيقة: <strong style="color: ${percentage >= 50 ? '#10b981' : '#ef4444'};">${percentage}%</strong>
                     </div>
-                    <p style="font-size: 0.95rem; color: #9ca3af; line-height: 1.5;">
-                        ${percentage >= 80 ? '🌟 أداء ممتاز ومستقر، حافظ على هذا النسق العالي!' : percentage >= 50 ? '⚠️ أداء مقبول ولكن يحتاج إلى مزيد من التركيز والمراجعة الجدية للجلسات.' : '❌ النتيجة ضعيفة للغاية! تم رصد أخطائك في قسم "صيد الثغرات" للمراجعة.'}
-                    </p>
                 </div>
             `;
             document.getElementById('examTimerContainer').innerHTML = reportHtml;
@@ -1010,7 +905,7 @@
                 card.className = 'question-card';
                 card.innerHTML = `
                     <div class="question-header">
-                        <span>🖤 السؤال ${index + 1} 🖤</span>
+                        <span>السؤال ${index + 1}</span>
                         <div class="action-btns">
                             <button class="icon-btn" onclick="speakText('', this)" title="قراءة السؤال صوتياً">🔊</button>
                         </div>
@@ -1030,7 +925,7 @@
             const container = document.getElementById('questionsContainer');
             container.innerHTML = '';
             if(!questions || questions.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#9ca3af; margin-top:30px;">⏳ هذه الجلسة فارغة بانتظار ربط ملف الـ JavaScript الخاص بها غداً يا GOAT 🖤🌹</p>';
+                container.innerHTML = '<p style="text-align:center; color:#9ca3af; margin-top:30px;">⏳ هذه الجلسة فارغة بانتظار ربط ملف الـ JavaScript الخاص بها غداً يا LM10 🖤🌹</p>';
                 return;
             }
             questions.forEach((item, index) => {
@@ -1040,7 +935,7 @@
                 let starColor = isFav ? 'gold' : 'white';
                 card.innerHTML = `
                     <div class="question-header">
-                        <span>🖤 ${index + 1} 🖤</span>
+                        <span>${index + 1}</span>
                         <div class="action-btns">
                             <button class="icon-btn" onclick="speakText('', this)" title="قراءة السؤال صوتياً">🔊</button>
                             <button class="icon-btn" onclick="toggleFocus(this)" title="وضع التركيز">👁️</button>
